@@ -1,35 +1,54 @@
-# CRUD DE TAREAS CON MONGOOSE
+# Task management API
 
-Esta es una aplicación sencilla en Node.js utilizando Express con mongoose para crear una API de tareas, donde podras crear, ver tareas, actulizar y borrarlas.
+An Express and MongoDB task API with create, list, detail, update, completion, and delete operations. It also contains a server-rendered task listing route.
 
-La estructura será la siguiente:
-- config
-  - config.js // Código de la conexión a la base de datos.
-- env
-  - .env // Aquí debe ir la MONGO_URI que nos da mongoDB Atlas
-- models
-  - Task.js // Aqui ira el modelo de la tarea con los campos title, completed y los timestamps.
-- routes 
-  - tasks.js // Aquí estarán todas las rutas
-- index.js // Añadiremos nuestro servidor, conexión a la base de datos y uniremos el resto de la aplicación
+**Collection:** Node.js and APIs · [Project directory](https://github.com/Rspinelli93/Rspinelli93/blob/main/PROJECTS.md)
 
-## Endpoints de la API
-- POST /create: Endpoint para crear una tarea.
-- GET /: Endpoint para traer todas las tareas.
-- GET /id/:_id: Endpoint para buscar tarea por id.
-- PUT /markAsCompleted/:_id: Endpoint para marcar una tarea como completada.
-- PUT /id/:_id: Endpoint para actualizar una tarea y que solo se pueda cambiar el título de la tarea. Es decir, que no me deje cambiar el campo  “completed” desde este endpoint, sino solo, el título.
-- DELETE /id/:_id: Endpoint para eliminar una tarea.
+**Related repository:** [iamfullstackdev](https://github.com/Rspinelli93/iamfullstackdev)
 
+## Stack
 
-1. Configuración
-- Lo primero es inicializar nuestro proyecto de node
-- Lo segundo es hacer npm install para instalar las dependencias de package.json
-- Crearemos un servidor http con express en app.js
+`cors`, `dotenv`, `express`, `mongoose`.
 
-2. Paso a paso 
-- Comenzaremos a manejar los módulos y solo introduciremos lo necesario en cada uno de ellos. No se debe requerir nada que no se vaya a usar.
+## Run locally
 
-3. POSTMAN
-- Cada endpoint debe ser probado en postman y ver que funcione.
+Install Node.js and npm, then run:
 
+```bash
+git clone https://github.com/Rspinelli93/back-join.git
+cd back-join
+npm install
+npm start
+```
+
+The start script uses Node’s `--watch` option; use a Node version that supports it.
+
+## Configuration
+
+The source reads these environment variables. Configure them locally before starting the relevant integrations; values are not included here.
+
+| Variable | Used by |
+| --- | --- |
+| `MONGO_URI` | [`config/config.js`](config/config.js) |
+| `PORT` | [`index.js`](index.js) |
+
+## Available commands
+
+| Command | Script in package.json |
+| --- | --- |
+| `npm run start` | `node --watch index.js` |
+
+The `test` script is a placeholder; an automated test suite is not configured through that command.
+
+## Repository guide
+
+- [`config/`](config/)
+- [`controllers/`](controllers/)
+- [`index.js`](index.js)
+- [`models/`](models/)
+- [`package.json`](package.json)
+- [`routes/`](routes/)
+
+---
+
+[Back to my GitHub profile](https://github.com/Rspinelli93)
